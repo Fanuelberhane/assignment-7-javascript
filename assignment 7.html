@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>  
+<head>
+  <title>Maps and Array Destructuring Example</title>
+</head>
+<body style="background-color: aqua;">
+  <h3>Array maps Destructuring</h3>
+ 
+  <p>First Color: <span id="firstColor"></span></p>
+  <p>Second Color: <span id="secondColor"></span></p>
+  <p>Third Color: <span id="thirdColor"></span></p>
+
+  <button onclick="displayColors()">Colors</button>
+
+  <br>
+
+
+  <h3> Destructuring the objects</h3>
+
+  <p>Name: <span id="name"></span></p>
+<p>City: <span id="city"></span></p>
+  <p>Age: <span id="age"></span></p>
+
+  <button onclick="displayPersonDetails()">Person Details</button>
+
+  <br>
+
+  <h3>Object Destructuring 2</h3>
+  
+  <p>Theme: <span id="theme"></span></p>
+  <p>Language: <span id="language"></span></p>
+  <p>Mode: <span id="mode"></span></p>
+
+  <button onclick="displaySettings()">changed Settings</button>
+
+
+
+  
+
+  <script>
+    const colors = ['Red', 'Green', 'Blue'];
+    
+    const [firstColor, secondColor, thirdColor] = colors;
+
+    function displayColors() {
+      document.getElementById('firstColor').innerText = firstColor;
+      document.getElementById('secondColor').innerText = secondColor;
+      document.getElementById('thirdColor').innerText = thirdColor;
+    }
+
+    const person = { name: 'Fanuel', age: 33, city: 'Addis ababa' };
+
+    const { name, age, city } = person;
+
+    function displayPersonDetails() {
+      document.getElementById('name').innerText = name;
+      document.getElementById('age').innerText = age;
+      document.getElementById('city').innerText = city;
+    }
+
+
+    const settings = { theme: 'dark', language: 'en' };
+
+    const { theme, language, mode = 'light' } = settings;
+
+    function displaySettings() {
+      document.getElementById('theme').innerText = theme;
+      document.getElementById('language').innerText = language;
+      document.getElementById('mode').innerText = mode;
+    }
+    
+  </script>
+</body>
+</html>
